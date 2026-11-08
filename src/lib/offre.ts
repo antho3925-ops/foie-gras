@@ -67,6 +67,7 @@ export function messageOffre(achetes: number, seuil = 10): string {
   const suite = manque === 1 ? "Plus qu'1 pour en avoir un" : `Plus que ${manque} pour en avoir un`;
   if (offerts === 0) return `${suite} offert !`;
   const gagne = offerts === 1 ? "1 foie gras offert" : `${offerts} foies gras offerts`;
+  if (manque === seuil) return `Bravo, ${gagne} !`;
   return `Bravo, ${gagne} ! ${suite} de plus.`;
 }
 

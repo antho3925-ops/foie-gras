@@ -23,7 +23,8 @@ describe("offre 10 achetés = 1 offert", () => {
     expect(manquantPourOffert(10)).toBe(10);
     expect(messageOffre(8)).toBe("Plus que 2 pour en avoir un offert !");
     expect(messageOffre(9)).toBe("Plus qu'1 pour en avoir un offert !");
-    expect(messageOffre(10)).toContain("Bravo, 1 foie gras offert");
+    expect(messageOffre(10)).toBe("Bravo, 1 foie gras offert !");
+    expect(messageOffre(13)).toBe("Bravo, 1 foie gras offert ! Plus que 7 pour en avoir un de plus.");
     expect(messageOffre(22)).toContain("2 foies gras offerts");
   });
   it("répartit les offerts et respecte le choix du client", () => {

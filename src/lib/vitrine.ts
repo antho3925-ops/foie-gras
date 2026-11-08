@@ -1,11 +1,12 @@
 import { createClient } from "@supabase/supabase-js";
+import { SUPABASE_CLE_PUBLIQUE, SUPABASE_URL } from "./config";
 import { PRODUITS_DEFAUT, REGLAGES_DEFAUT } from "./defauts";
 import type { Produit, Reglages } from "./types";
 
 /** Lecture côté serveur des réglages et produits pour la page publique */
 export async function chargerVitrine(): Promise<{ reglages: Reglages; produits: Produit[] }> {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const cle = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const url = process.env.NEXT_PUBLIC_DEMO === "1" ? "" : SUPABASE_URL;
+  const cle = SUPABASE_CLE_PUBLIQUE;
   if (!url || !cle) return { reglages: REGLAGES_DEFAUT, produits: PRODUITS_DEFAUT };
   try {
     const sb = createClient(url, cle, { auth: { persistSession: false } });

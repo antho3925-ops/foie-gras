@@ -97,7 +97,7 @@ npm run lint
 npm run build
 ```
 
-Sans fichier `.env.local`, le site tourne en **mode démo** : les commandes sont gardées dans le navigateur et l'espace `/admin` s'ouvre sans mot de passe, avec les 5 commandes d'exemple. Pour brancher Supabase en local, copie `.env.example` en `.env.local` et remplis les deux valeurs.
+Les clés publiques Supabase sont dans `src/lib/config.ts`. Avec `NEXT_PUBLIC_DEMO=1`, le site tourne en **mode démo** : les commandes sont gardées dans le navigateur et l'espace `/admin` s'ouvre sans mot de passe, avec les 5 commandes d'exemple. Pour utiliser un autre projet Supabase, renseigne les deux variables de `.env.example`.
 
 Structure :
 

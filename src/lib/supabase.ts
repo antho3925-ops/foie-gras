@@ -1,7 +1,9 @@
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 
-const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const cle = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+import { SUPABASE_CLE_PUBLIQUE, SUPABASE_URL } from "./config";
+
+const url = process.env.NEXT_PUBLIC_DEMO === "1" ? "" : SUPABASE_URL;
+const cle = SUPABASE_CLE_PUBLIQUE;
 
 /** Vrai quand les clés Supabase sont renseignées. Sinon le site tourne en « mode démo ». */
 export const supabaseConfigure = Boolean(url && cle);

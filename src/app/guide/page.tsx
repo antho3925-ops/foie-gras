@@ -3,7 +3,7 @@ import { Toque } from "@/components/Logo";
 
 export const metadata: Metadata = { title: "Guide producteur · La Toque Dorée", robots: { index: false, follow: false } };
 
-const VIDEO = "/guide/la-toque-doree-presentation.mp4";
+const VIDEO = "/guide/la-toque-doree-presentation.mp4?v=2";
 const PDF = "/guide/la-toque-doree-guide.pdf";
 
 export default function Guide() {
